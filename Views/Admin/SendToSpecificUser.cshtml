@@ -1,0 +1,38 @@
+﻿@using SignalRDemo.Models
+@model Article
+@{
+    ViewData["Title"] = "SendToSpecificUser";
+}
+<h1>Index</h1>
+@using (Html.BeginForm("SendToSpecificUser", "Admin", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-6">
+            User Id
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.userId, new { @maxlength = "50" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            Article Heading
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.articleHeading, new { @maxlength = "50" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            Article Content
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.articleContent, new { @maxlength = "100" })
+        </div>
+    </div>
+    <div>
+        <button type="submit">Send to Specific User</button>
+    </div>
+}

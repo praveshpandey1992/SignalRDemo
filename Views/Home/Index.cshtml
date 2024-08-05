@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p id="user"></p>
+    <div id="articleList"></div>
+</div>
+<script>
+    function ready() {
+
+    }
+    //random number between 1 and 100 for demo
+    var userId = Math.floor((Math.random() * 100) + 1);
+    document.addEventListener("DOMContentLoaded", ready);
+
+    document.getElementById("user").innerHTML = "UserId: " + userId;
+</script>
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/notification.js"></script>
